@@ -10,6 +10,9 @@ public class Result {
     long executionTimeGraph4J;
     long executionTimeJGraphT;
 
+    int executionTimeGraph4JSecond;
+    int executionTimeJGraphTSecond;
+
     public String getDatasetName() {
         return datasetName;
     }
@@ -56,6 +59,7 @@ public class Result {
 
     public void setExecutionTimeGraph4J(long executionTimeGraph4J) {
         this.executionTimeGraph4J = executionTimeGraph4J;
+        this.executionTimeGraph4JSecond = (int) (executionTimeGraph4J / 1000);
     }
 
     public long getExecutionTimeJGraphT() {
@@ -64,6 +68,7 @@ public class Result {
 
     public void setExecutionTimeJGraphT(long executionTimeJGraphT) {
         this.executionTimeJGraphT = executionTimeJGraphT;
+        this.executionTimeJGraphTSecond = (int) (executionTimeJGraphT / 1000);
     }
 
     @Override
@@ -74,8 +79,10 @@ public class Result {
                 ", graphType='" + graphType + '\'' +
                 ", numVertices=" + numVertices +
                 ", numEdges=" + numEdges +
-                ", executionTimeGraph4J=" + executionTimeGraph4J +
-                ", executionTimeJGraphT=" + executionTimeJGraphT +
+//                ", executionTimeGraph4JSecond=" + executionTimeGraph4JSecond +
+//                ", executionTimeJGraphTSecond=" + executionTimeJGraphTSecond +
+                ", executionTimeGraph4J=" + executionTimeGraph4J + "ms"+
+                ", executionTimeJGraphT=" + executionTimeJGraphT + "ms"+
                 '}';
     }
 }

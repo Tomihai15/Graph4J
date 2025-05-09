@@ -6,6 +6,8 @@ import java.nio.file.Paths;
 public class DatasetsNames {
     public static final String WEB_GOOGLE = "web-Google.txt";
     public static final String YOUTUBE = "yt.txt";
+    public static final String AMAZON = "amazon0312.txt";
+    public static final String WIKITALK = "WikiTalk.txt";
 
     private static int getNumVerticesOrEdges(String datasetName, boolean vertex) {
         int n = 0, m = 0, i = 0;
@@ -31,9 +33,11 @@ public class DatasetsNames {
             return m;
         }
     }
+
     public static int getNumVertices(String datasetName) {
         return getNumVerticesOrEdges(datasetName, true);
     }
+
     public static int getNumEdges(String datasetName) {
         return getNumVerticesOrEdges(datasetName, false);
     }

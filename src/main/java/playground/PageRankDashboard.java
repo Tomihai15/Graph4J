@@ -13,8 +13,7 @@ import java.util.List;
 
 
 public class PageRankDashboard {
-    public static Result runTest(String datasetName)
-    {
+    public static Result runTest(String datasetName) {
         Result result = new Result();
         PerformanceTest performanceTest;
         result.setAlgorithmName("PageRank");
@@ -23,7 +22,7 @@ public class PageRankDashboard {
         result.setNumVertices(DatasetsNames.getNumVertices(datasetName));
         result.setNumEdges(DatasetsNames.getNumEdges(datasetName));
 
-        performanceTest= new PageRankJGraphT();
+        performanceTest = new PageRankJGraphT();
         performanceTest.loadGraph(datasetName);
         long time = performanceTest.runPageRankTest(false);
         result.setExecutionTimeJGraphT(time);
@@ -33,7 +32,7 @@ public class PageRankDashboard {
         time = performanceTest.runPageRankTest(false);
         result.setExecutionTimeGraph4J(time);
 
-        return  result;
+        return result;
     }
 
     public static void writeResultsToFile(List<Result> results, String fileName) {
@@ -46,12 +45,10 @@ public class PageRankDashboard {
             e.printStackTrace();
         }
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         List<Result> results = new ArrayList<>();
-        String[] datasets = {
-                DatasetsNames.YOUTUBE,
-                DatasetsNames.WEB_GOOGLE
-        };
+        String[] datasets = {DatasetsNames.YOUTUBE, DatasetsNames.WEB_GOOGLE, DatasetsNames.AMAZON, DatasetsNames.WIKITALK};
 
         for (String dataset : datasets) {
             Result r = runTest(dataset);
