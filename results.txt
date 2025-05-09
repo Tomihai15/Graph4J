@@ -1,0 +1,2 @@
+Result{datasetName='yt.txt', algorithmName='PageRank', graphType='Directed', numVertices=4, numEdges=7, executionTimeGraph4J=0, executionTimeJGraphT=5}
+Result{datasetName='web-Google.txt', algorithmName='PageRank', graphType='Directed', numVertices=875713, numEdges=5105039, executionTimeGraph4J=677, executionTimeJGraphT=2935}

@@ -1,0 +1,9 @@
+# Nodes: 4 Edges: 7
+# FromNodeId ToNodeId
+0   11
+0   2
+11   9
+2   0
+2   11
+2   9
+9   2

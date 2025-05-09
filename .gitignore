@@ -2,7 +2,8 @@
 nbproject/
 target/
 temp/
-
+.vscode
+.idea
 *.jar
 *.war
 *.nar
