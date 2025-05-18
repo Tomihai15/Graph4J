@@ -4,10 +4,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class DatasetsNames {
-    public static final String WEB_GOOGLE = "web-Google.txt";
-    public static final String YOUTUBE = "yt.txt";
-    public static final String AMAZON = "amazon0312.txt";
-    public static final String WIKITALK = "WikiTalk.txt";
+    public static final String WEB_GOOGLE = "web-Google.txt"; //directed
+    public static final String YOUTUBE = "yt.txt"; //directed
+    public static final String AMAZON = "amazon0312.txt"; //directed
+    public static final String WIKITALK = "WikiTalk.txt"; //directed
 
     private static int getNumVerticesOrEdges(String datasetName, boolean vertex) {
         int n = 0, m = 0, i = 0;

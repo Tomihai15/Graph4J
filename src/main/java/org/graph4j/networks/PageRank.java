@@ -15,11 +15,16 @@ public class PageRank extends DirectedGraphAlgorithm {
     private final int maxIterations;
     private final double tolerance = 0.0001;
     private double[] ranks;
+    private final int DEFAULT_MAXIMUM_ITERATIONS = 100;
 
     public PageRank(Digraph graph, double alpha, int maxIterations) {
         super(graph);
         this.alpha = alpha;
         this.maxIterations = maxIterations;
+    }
+    public PageRank(Digraph graph) {
+        super(graph);
+        maxIterations = DEFAULT_MAXIMUM_ITERATIONS;
     }
 
     public void compute(){
@@ -32,12 +37,13 @@ public class PageRank extends DirectedGraphAlgorithm {
         for (int iter = 0; iter < maxIterations; iter++) {
             double[] nextRanks = new double[n];
             for (int i = 0; i < n; i++) {
-                for (int j : graph.neighbors(i)) {
-                    nextRanks[j] +=  alpha* currentRanks[i] / graph.outdegree(i);
+                for (int j : graph.neighbors(i)) {//incoming edges?
+                    nextRanks[i] += alpha * currentRanks[j] / graph.outdegree(j);
                 }
             }
+            double t = (1 - alpha) / n;
             for (int i = 0; i < n; i++) {
-                nextRanks[i] += (1 - alpha) / n;
+                nextRanks[i] += t;
             }
             if (isUnderTolerance(currentRanks, nextRanks)) {
                 break;
@@ -54,7 +60,7 @@ public class PageRank extends DirectedGraphAlgorithm {
         }
         return true;
     }
-    public double[] getRanksAsArray()
+    public double[] getRanks()
     {
         if (ranks == null) {
             compute();
@@ -67,15 +73,18 @@ public class PageRank extends DirectedGraphAlgorithm {
         }
         return ranks[v];
     }
+    private Map ranksMap = null;
     public <V> Map<V, Double> getRanksAsMap() {
         if (ranks == null) {
             compute();
         }
-        Map<V, Double> rankMap = new HashMap<>();
-        for (int i = 0; i < ranks.length; i++) {
-            rankMap.put((V) graph.getVertexLabel(i), ranks[i]);
+        if (ranksMap == null) {
+            ranksMap = new HashMap<>();
+            for (int i = 0; i < ranks.length; i++) {
+                ranksMap.put((V) graph.getVertexLabel(i), ranks[i]);
+            }
         }
-        return rankMap;
+        return ranksMap;
     }
     public <V> double getVertexScore(V v) {
         if (ranks == null) {

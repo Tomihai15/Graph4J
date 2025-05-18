@@ -1,4 +1,4 @@
-Result{datasetName='yt.txt', algorithmName='PageRank', graphType='Directed', numVertices=4, numEdges=7, executionTimeGraph4J=0ms, executionTimeJGraphT=18ms}
-Result{datasetName='web-Google.txt', algorithmName='PageRank', graphType='Directed', numVertices=875713, numEdges=5105039, executionTimeGraph4J=697ms, executionTimeJGraphT=2350ms}
-Result{datasetName='amazon0312.txt', algorithmName='PageRank', graphType='Directed', numVertices=400727, numEdges=3200440, executionTimeGraph4J=312ms, executionTimeJGraphT=1847ms}
-Result{datasetName='WikiTalk.txt', algorithmName='PageRank', graphType='Directed', numVertices=2394385, numEdges=5021410, executionTimeGraph4J=316ms, executionTimeJGraphT=3645ms}
+Result{datasetName='yt.txt', algorithmName='PageRank', graphType='Directed', numVertices=4, numEdges=7, executionTimeGraph4J=0ms, executionTimeJGraphT=5ms}
+Result{datasetName='web-Google.txt', algorithmName='PageRank', graphType='Directed', numVertices=875713, numEdges=5105039, executionTimeGraph4J=1633ms, executionTimeJGraphT=2558ms}
+Result{datasetName='amazon0312.txt', algorithmName='PageRank', graphType='Directed', numVertices=400727, numEdges=3200440, executionTimeGraph4J=1113ms, executionTimeJGraphT=1788ms}
+Result{datasetName='WikiTalk.txt', algorithmName='PageRank', graphType='Directed', numVertices=2394385, numEdges=5021410, executionTimeGraph4J=744ms, executionTimeJGraphT=3522ms}
